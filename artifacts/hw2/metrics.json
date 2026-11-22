@@ -1,0 +1,1706 @@
+{
+  "track": "cv",
+  "model": "yolo26n.pt",
+  "revision": "ultralytics==8.4.40; sha256=9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+  "dataset": "Yellow Sticky Traps (Deserno and Briassouli, 2021)",
+  "dataset_url": "https://github.com/md-121/yellow-sticky-traps-dataset",
+  "dataset_license": "CC0-1.0",
+  "classes": [
+    "Macrolophus pygmaeus",
+    "Nesidiocoris tenuis",
+    "Trialeurodes vaporariorum"
+  ],
+  "n_train": 198,
+  "n_val": 42,
+  "n_test": 44,
+  "params_total": 2572280,
+  "baseline": {
+    "split": "test",
+    "coco_map50": 0.0,
+    "heuristic_map50": 0.0,
+    "heuristic_ap50_per_class": {
+      "Macrolophus pygmaeus": 0.0,
+      "Nesidiocoris tenuis": 0.0,
+      "Trialeurodes vaporariorum": 0.0
+    }
+  },
+  "final": {
+    "split": "test",
+    "map50": 0.7466479680596089,
+    "map50_95": 0.3237079166072326,
+    "precision": 0.7106863428960898,
+    "recall": 0.7260208192174397,
+    "per_class": {
+      "Macrolophus pygmaeus": {
+        "precision": 0.7266843126857795,
+        "recall": 0.610062893081761,
+        "map50": 0.7039186175877438,
+        "map50_95": 0.30807732747261574
+      },
+      "Nesidiocoris tenuis": {
+        "precision": 0.6945801093977624,
+        "recall": 0.8548387096774194,
+        "map50": 0.8259458003898108,
+        "map50_95": 0.3907832125969784
+      },
+      "Trialeurodes vaporariorum": {
+        "precision": 0.7107946066047275,
+        "recall": 0.7131608548931384,
+        "map50": 0.710079486201272,
+        "map50_95": 0.27226320975210366
+      }
+    },
+    "custom_map50": 0.7438984453891774
+  },
+  "ablation": {
+    "parameter": "imgsz",
+    "split": "val",
+    "variants": [
+      {
+        "value": 640,
+        "map50": 0.7486046856415784,
+        "map50_95": 0.3255786530396732,
+        "precision": 0.714236132323603,
+        "recall": 0.706755634294839,
+        "per_class": {
+          "Macrolophus pygmaeus": {
+            "precision": 0.7928436905040986,
+            "recall": 0.6202314655165211,
+            "map50": 0.7812486911898237,
+            "map50_95": 0.34190500230353604
+          },
+          "Nesidiocoris tenuis": {
+            "precision": 0.7018512443401026,
+            "recall": 0.7721518987341772,
+            "map50": 0.792077394918034,
+            "map50_95": 0.3692866959531315
+          },
+          "Trialeurodes vaporariorum": {
+            "precision": 0.6480134621266078,
+            "recall": 0.7278835386338186,
+            "map50": 0.6724879708168778,
+            "map50_95": 0.26554426086235206
+          }
+        },
+        "train_time_sec": 1266.5276969000006
+      },
+      {
+        "value": 320,
+        "map50": 0.49021266406098674,
+        "map50_95": 0.179395642807169,
+        "precision": 0.5104445419047571,
+        "recall": 0.5628191545856057,
+        "per_class": {
+          "Macrolophus pygmaeus": {
+            "precision": 0.5693529685895139,
+            "recall": 0.43478260869565216,
+            "map50": 0.46368154562129094,
+            "map50_95": 0.1572857025895606
+          },
+          "Nesidiocoris tenuis": {
+            "precision": 0.4992245765913598,
+            "recall": 0.7721518987341772,
+            "map50": 0.6513676434210516,
+            "map50_95": 0.2732364073092209
+          },
+          "Trialeurodes vaporariorum": {
+            "precision": 0.46275608053339734,
+            "recall": 0.48152295632698766,
+            "map50": 0.3555888031406176,
+            "map50_95": 0.10766481852272551
+          }
+        },
+        "train_time_sec": 1199.5102596999986
+      }
+    ]
+  },
+  "errors": {
+    "tp": 925,
+    "class": 8,
+    "localization": 117,
+    "background": 468,
+    "missed": 198
+  },
+  "device": "NVIDIA GeForce RTX 3060",
+  "train_time_sec": 1266.5276969000006,
+  "fast_mode": false,
+  "train_args": {
+    "epochs": 60,
+    "imgsz": 640,
+    "batch": 16,
+    "optimizer": "AdamW",
+    "lr0": 0.001,
+    "lrf": 0.01,
+    "weight_decay": 0.0005,
+    "warmup_epochs": 3,
+    "cos_lr": true,
+    "patience": 15,
+    "seed": 0,
+    "deterministic": true,
+    "amp": true,
+    "val": true,
+    "plots": true,
+    "cache": false,
+    "rect": false,
+    "degrees": 10,
+    "translate": 0.1,
+    "scale": 0.3,
+    "fliplr": 0.5,
+    "flipud": 0.5,
+    "hsv_h": 0.015,
+    "hsv_s": 0.3,
+    "hsv_v": 0.3,
+    "mosaic": 0.5,
+    "close_mosaic": 10,
+    "mixup": 0.0
+  },
+  "run_times": {
+    "coco_baseline": 22.52879910000047,
+    "heuristic": 17.03643899999952,
+    "train": 1266.5276969000006,
+    "evaluation": 44.457146799999464,
+    "errors": 20.84933799999999,
+    "ablation": 1199.5102596999986,
+    "rtdetr_train": 3300.4364915999977,
+    "corruptions": 90.12332259999675,
+    "thresholds": 46.94856699999946
+  },
+  "final_by_split": {
+    "val": {
+      "map50": 0.7486046856415784,
+      "map50_95": 0.3255786530396732,
+      "precision": 0.714236132323603,
+      "recall": 0.706755634294839,
+      "per_class": {
+        "Macrolophus pygmaeus": {
+          "precision": 0.7928436905040986,
+          "recall": 0.6202314655165211,
+          "map50": 0.7812486911898237,
+          "map50_95": 0.34190500230353604
+        },
+        "Nesidiocoris tenuis": {
+          "precision": 0.7018512443401026,
+          "recall": 0.7721518987341772,
+          "map50": 0.792077394918034,
+          "map50_95": 0.3692866959531315
+        },
+        "Trialeurodes vaporariorum": {
+          "precision": 0.6480134621266078,
+          "recall": 0.7278835386338186,
+          "map50": 0.6724879708168778,
+          "map50_95": 0.26554426086235206
+        }
+      }
+    },
+    "test": {
+      "map50": 0.7466479680596089,
+      "map50_95": 0.3237079166072326,
+      "precision": 0.7106863428960898,
+      "recall": 0.7260208192174397,
+      "per_class": {
+        "Macrolophus pygmaeus": {
+          "precision": 0.7266843126857795,
+          "recall": 0.610062893081761,
+          "map50": 0.7039186175877438,
+          "map50_95": 0.30807732747261574
+        },
+        "Nesidiocoris tenuis": {
+          "precision": 0.6945801093977624,
+          "recall": 0.8548387096774194,
+          "map50": 0.8259458003898108,
+          "map50_95": 0.3907832125969784
+        },
+        "Trialeurodes vaporariorum": {
+          "precision": 0.7107946066047275,
+          "recall": 0.7131608548931384,
+          "map50": 0.710079486201272,
+          "map50_95": 0.27226320975210366
+        }
+      }
+    }
+  },
+  "errors_by_class": {
+    "Macrolophus pygmaeus": {
+      "tp": 178,
+      "class": 0,
+      "localization": 6,
+      "background": 60,
+      "missed": 66
+    },
+    "Nesidiocoris tenuis": {
+      "tp": 64,
+      "class": 8,
+      "localization": 3,
+      "background": 26,
+      "missed": 13
+    },
+    "Trialeurodes vaporariorum": {
+      "tp": 683,
+      "class": 0,
+      "localization": 108,
+      "background": 382,
+      "missed": 119
+    }
+  },
+  "bonuses": {
+    "6.2": {
+      "yolo": {
+        "map50": 0.7486046856415784,
+        "map50_95": 0.3255786530396732,
+        "precision": 0.714236132323603,
+        "recall": 0.706755634294839,
+        "per_class": {
+          "Macrolophus pygmaeus": {
+            "precision": 0.7928436905040986,
+            "recall": 0.6202314655165211,
+            "map50": 0.7812486911898237,
+            "map50_95": 0.34190500230353604
+          },
+          "Nesidiocoris tenuis": {
+            "precision": 0.7018512443401026,
+            "recall": 0.7721518987341772,
+            "map50": 0.792077394918034,
+            "map50_95": 0.3692866959531315
+          },
+          "Trialeurodes vaporariorum": {
+            "precision": 0.6480134621266078,
+            "recall": 0.7278835386338186,
+            "map50": 0.6724879708168778,
+            "map50_95": 0.26554426086235206
+          }
+        },
+        "params": 2504970,
+        "train_time_sec": 1266.5276969000006,
+        "latency_ms": {
+          "mean": 18.902120000348077,
+          "std": 3.46260350081319,
+          "repeats": 20
+        }
+      },
+      "rtdetr": {
+        "map50": 0.037853363374094624,
+        "map50_95": 0.00714480996437965,
+        "precision": 0.03669782816165549,
+        "recall": 0.4336537861218602,
+        "per_class": {
+          "Macrolophus pygmaeus": {
+            "precision": 0.0508026094463572,
+            "recall": 0.5019762845849802,
+            "map50": 0.0662037325647664,
+            "map50_95": 0.013161519198889454
+          },
+          "Nesidiocoris tenuis": {
+            "precision": 0.025653842302780113,
+            "recall": 0.6455696202531646,
+            "map50": 0.03813235535057435,
+            "map50_95": 0.007104890346023981
+          },
+          "Trialeurodes vaporariorum": {
+            "precision": 0.033637032735829166,
+            "recall": 0.1534154535274356,
+            "map50": 0.00922400220694314,
+            "map50_95": 0.001168020348225515
+          }
+        },
+        "params": 32812241,
+        "train_time_sec": 3300.4364915999977,
+        "latency_ms": {
+          "mean": 40.501004999714496,
+          "std": 1.9500788583158515,
+          "repeats": 20
+        }
+      },
+      "train_args": {
+        "epochs": 60,
+        "imgsz": 640,
+        "batch": 4,
+        "optimizer": "AdamW",
+        "lr0": 0.0001,
+        "lrf": 0.01,
+        "weight_decay": 0.0005,
+        "warmup_epochs": 3,
+        "cos_lr": true,
+        "patience": 15,
+        "seed": 0,
+        "deterministic": true,
+        "amp": true,
+        "val": true,
+        "plots": true,
+        "cache": false,
+        "rect": false,
+        "degrees": 10,
+        "translate": 0.1,
+        "scale": 0.3,
+        "fliplr": 0.5,
+        "flipud": 0.5,
+        "hsv_h": 0.015,
+        "hsv_s": 0.3,
+        "hsv_v": 0.3,
+        "mosaic": 0.5,
+        "close_mosaic": 10,
+        "mixup": 0.0
+      },
+      "weights_sha256": "6de60b10d4bc566f00cda0f5b4d64afe4b66d48dc9695d2171effb7859d8e73f",
+      "split": "val"
+    },
+    "6.3": {
+      "settings": {
+        "dark": {
+          "brightness": 0.35
+        },
+        "noise": {
+          "sigma": 25
+        },
+        "jpeg": {
+          "quality": 10
+        }
+      },
+      "metrics": {
+        "clean": {
+          "map50": 0.7486046856415784,
+          "map50_95": 0.3255786530396732,
+          "precision": 0.714236132323603,
+          "recall": 0.706755634294839,
+          "per_class": {
+            "Macrolophus pygmaeus": {
+              "precision": 0.7928436905040986,
+              "recall": 0.6202314655165211,
+              "map50": 0.7812486911898237,
+              "map50_95": 0.34190500230353604
+            },
+            "Nesidiocoris tenuis": {
+              "precision": 0.7018512443401026,
+              "recall": 0.7721518987341772,
+              "map50": 0.792077394918034,
+              "map50_95": 0.3692866959531315
+            },
+            "Trialeurodes vaporariorum": {
+              "precision": 0.6480134621266078,
+              "recall": 0.7278835386338186,
+              "map50": 0.6724879708168778,
+              "map50_95": 0.26554426086235206
+            }
+          }
+        },
+        "dark": {
+          "map50": 0.6308816973118004,
+          "map50_95": 0.2538910160371808,
+          "precision": 0.6546949205282379,
+          "recall": 0.5961155523938118,
+          "per_class": {
+            "Macrolophus pygmaeus": {
+              "precision": 0.6564949923668572,
+              "recall": 0.4980237154150198,
+              "map50": 0.5835748167455506,
+              "map50_95": 0.2529236893897006
+            },
+            "Nesidiocoris tenuis": {
+              "precision": 0.6962219488154433,
+              "recall": 0.6455696202531646,
+              "map50": 0.6996525699552245,
+              "map50_95": 0.27440555745150796
+            },
+            "Trialeurodes vaporariorum": {
+              "precision": 0.6113678204024131,
+              "recall": 0.6447533215132507,
+              "map50": 0.6094177052346261,
+              "map50_95": 0.234343801270334
+            }
+          }
+        },
+        "noise": {
+          "map50": 0.3047725939932378,
+          "map50_95": 0.09595535534332451,
+          "precision": 0.6319554754933939,
+          "recall": 0.23200172386832096,
+          "per_class": {
+            "Macrolophus pygmaeus": {
+              "precision": 0.9137280716027738,
+              "recall": 0.08375078166942924,
+              "map50": 0.2805402879983431,
+              "map50_95": 0.09356093687437647
+            },
+            "Nesidiocoris tenuis": {
+              "precision": 0.3544908269754633,
+              "recall": 0.3291139240506329,
+              "map50": 0.31326789361181373,
+              "map50_95": 0.09039554109288322
+            },
+            "Trialeurodes vaporariorum": {
+              "precision": 0.6276475279019447,
+              "recall": 0.2831404658849007,
+              "map50": 0.32050960036955656,
+              "map50_95": 0.10390958806271382
+            }
+          }
+        },
+        "jpeg": {
+          "map50": 0.567923679232626,
+          "map50_95": 0.20572497670584342,
+          "precision": 0.6669187244728221,
+          "recall": 0.5133901797455152,
+          "per_class": {
+            "Macrolophus pygmaeus": {
+              "precision": 0.5785323250231651,
+              "recall": 0.5612648221343873,
+              "map50": 0.5708465195013532,
+              "map50_95": 0.21488672165436382
+            },
+            "Nesidiocoris tenuis": {
+              "precision": 0.7554738187408606,
+              "recall": 0.4301935110551255,
+              "map50": 0.5611010529771762,
+              "map50_95": 0.19189913496374003
+            },
+            "Trialeurodes vaporariorum": {
+              "precision": 0.6667500296544407,
+              "recall": 0.5487122060470325,
+              "map50": 0.5718234652193485,
+              "map50_95": 0.2103890734994264
+            }
+          }
+        }
+      },
+      "split": "val"
+    },
+    "6.4": {
+      "method": "CUDA FP16",
+      "device": "NVIDIA GeForce RTX 3060",
+      "split": "val",
+      "imgsz": 640,
+      "batch": 1,
+      "speedup": 0.8924795691167144,
+      "map50_delta": -0.0012271658800987462,
+      "results": {
+        "fp32": {
+          "latency_ms": {
+            "mean": 20.003846666683483,
+            "std": 2.7642634465100544,
+            "repeats": 30
+          },
+          "map50": 0.7486046856415784,
+          "map50_95": 0.3255786530396732,
+          "precision": 0.714236132323603,
+          "recall": 0.706755634294839,
+          "per_class": {
+            "Macrolophus pygmaeus": {
+              "precision": 0.7928436905040986,
+              "recall": 0.6202314655165211,
+              "map50": 0.7812486911898237,
+              "map50_95": 0.34190500230353604
+            },
+            "Nesidiocoris tenuis": {
+              "precision": 0.7018512443401026,
+              "recall": 0.7721518987341772,
+              "map50": 0.792077394918034,
+              "map50_95": 0.3692866959531315
+            },
+            "Trialeurodes vaporariorum": {
+              "precision": 0.6480134621266078,
+              "recall": 0.7278835386338186,
+              "map50": 0.6724879708168778,
+              "map50_95": 0.26554426086235206
+            }
+          }
+        },
+        "fp16": {
+          "latency_ms": {
+            "mean": 22.413786666826734,
+            "std": 3.4803325048296165,
+            "repeats": 30
+          },
+          "map50": 0.7473775197614797,
+          "map50_95": 0.3260860558314026,
+          "precision": 0.7110878852845861,
+          "recall": 0.7070934727080501,
+          "per_class": {
+            "Macrolophus pygmaeus": {
+              "precision": 0.7867867742113973,
+              "recall": 0.6205533596837944,
+              "map50": 0.7770956112570142,
+              "map50_95": 0.3447504579268128
+            },
+            "Nesidiocoris tenuis": {
+              "precision": 0.700778034002931,
+              "recall": 0.7721518987341772,
+              "map50": 0.7932257994052633,
+              "map50_95": 0.3689888809606924
+            },
+            "Trialeurodes vaporariorum": {
+              "precision": 0.6456988476394303,
+              "recall": 0.7285751597061787,
+              "map50": 0.6718111486221615,
+              "map50_95": 0.2645188286067027
+            }
+          }
+        }
+      }
+    },
+    "6.5": {
+      "split": "val",
+      "metrics": [
+        {
+          "end2end": true,
+          "iou": 0.3,
+          "conf": 0.001,
+          "map50": 0.7462715480138572,
+          "ap50_per_class": {
+            "Macrolophus pygmaeus": 0.7755055505784412,
+            "Nesidiocoris tenuis": 0.7923353940721345,
+            "Trialeurodes vaporariorum": 0.6709736993909963
+          },
+          "precision": 0.11416082138863475,
+          "recall": 0.916734693877551,
+          "per_class": {
+            "Macrolophus pygmaeus": {
+              "precision": 0.09384498480243161,
+              "recall": 0.9762845849802372,
+              "tp": 247,
+              "fp": 2385,
+              "fn": 6
+            },
+            "Nesidiocoris tenuis": {
+              "precision": 0.06244995996797438,
+              "recall": 0.9873417721518988,
+              "tp": 78,
+              "fp": 1171,
+              "fn": 1
+            },
+            "Trialeurodes vaporariorum": {
+              "precision": 0.13398253861652115,
+              "recall": 0.8936170212765957,
+              "tp": 798,
+              "fp": 5158,
+              "fn": 95
+            }
+          }
+        },
+        {
+          "end2end": true,
+          "iou": 0.3,
+          "conf": 0.1,
+          "map50": 0.7227543723429947,
+          "ap50_per_class": {
+            "Macrolophus pygmaeus": 0.7401906641580339,
+            "Nesidiocoris tenuis": 0.7705792557567411,
+            "Trialeurodes vaporariorum": 0.6574931971142088
+          },
+          "precision": 0.4005355776587605,
+          "recall": 0.8546938775510204,
+          "per_class": {
+            "Macrolophus pygmaeus": {
+              "precision": 0.4524793388429752,
+              "recall": 0.8656126482213439,
+              "tp": 219,
+              "fp": 265,
+              "fn": 34
+            },
+            "Nesidiocoris tenuis": {
+              "precision": 0.3901098901098901,
+              "recall": 0.8987341772151899,
+              "tp": 71,
+              "fp": 111,
+              "fn": 8
+            },
+            "Trialeurodes vaporariorum": {
+              "precision": 0.3886036960985626,
+              "recall": 0.8477043673012318,
+              "tp": 757,
+              "fp": 1191,
+              "fn": 136
+            }
+          }
+        },
+        {
+          "end2end": true,
+          "iou": 0.3,
+          "conf": 0.25,
+          "map50": 0.6617351497623557,
+          "ap50_per_class": {
+            "Macrolophus pygmaeus": 0.6444166817721976,
+            "Nesidiocoris tenuis": 0.7254395254991273,
+            "Trialeurodes vaporariorum": 0.6153492420157424
+          },
+          "precision": 0.6097560975609756,
+          "recall": 0.7551020408163265,
+          "per_class": {
+            "Macrolophus pygmaeus": {
+              "precision": 0.7295081967213115,
+              "recall": 0.7035573122529645,
+              "tp": 178,
+              "fp": 66,
+              "fn": 75
+            },
+            "Nesidiocoris tenuis": {
+              "precision": 0.6336633663366337,
+              "recall": 0.810126582278481,
+              "tp": 64,
+              "fp": 37,
+              "fn": 15
+            },
+            "Trialeurodes vaporariorum": {
+              "precision": 0.5827645051194539,
+              "recall": 0.7648376259798432,
+              "tp": 683,
+              "fp": 489,
+              "fn": 210
+            }
+          }
+        },
+        {
+          "end2end": true,
+          "iou": 0.3,
+          "conf": 0.5,
+          "map50": 0.37490053376487537,
+          "ap50_per_class": {
+            "Macrolophus pygmaeus": 0.27714332124099844,
+            "Nesidiocoris tenuis": 0.5396705935260894,
+            "Trialeurodes vaporariorum": 0.3078876865275382
+          },
+          "precision": 0.845703125,
+          "recall": 0.35346938775510206,
+          "per_class": {
+            "Macrolophus pygmaeus": {
+              "precision": 0.9726027397260274,
+              "recall": 0.28063241106719367,
+              "tp": 71,
+              "fp": 2,
+              "fn": 182
+            },
+            "Nesidiocoris tenuis": {
+              "precision": 0.8490566037735849,
+              "recall": 0.569620253164557,
+              "tp": 45,
+              "fp": 8,
+              "fn": 34
+            },
+            "Trialeurodes vaporariorum": {
+              "precision": 0.8212435233160622,
+              "recall": 0.35498320268757,
+              "tp": 317,
+              "fp": 69,
+              "fn": 576
+            }
+          }
+        },
+        {
+          "end2end": true,
+          "iou": 0.7,
+          "conf": 0.001,
+          "map50": 0.7462715480138572,
+          "ap50_per_class": {
+            "Macrolophus pygmaeus": 0.7755055505784412,
+            "Nesidiocoris tenuis": 0.7923353940721345,
+            "Trialeurodes vaporariorum": 0.6709736993909963
+          },
+          "precision": 0.11416082138863475,
+          "recall": 0.916734693877551,
+          "per_class": {
+            "Macrolophus pygmaeus": {
+              "precision": 0.09384498480243161,
+              "recall": 0.9762845849802372,
+              "tp": 247,
+              "fp": 2385,
+              "fn": 6
+            },
+            "Nesidiocoris tenuis": {
+              "precision": 0.06244995996797438,
+              "recall": 0.9873417721518988,
+              "tp": 78,
+              "fp": 1171,
+              "fn": 1
+            },
+            "Trialeurodes vaporariorum": {
+              "precision": 0.13398253861652115,
+              "recall": 0.8936170212765957,
+              "tp": 798,
+              "fp": 5158,
+              "fn": 95
+            }
+          }
+        },
+        {
+          "end2end": true,
+          "iou": 0.7,
+          "conf": 0.1,
+          "map50": 0.7227543723429947,
+          "ap50_per_class": {
+            "Macrolophus pygmaeus": 0.7401906641580339,
+            "Nesidiocoris tenuis": 0.7705792557567411,
+            "Trialeurodes vaporariorum": 0.6574931971142088
+          },
+          "precision": 0.4005355776587605,
+          "recall": 0.8546938775510204,
+          "per_class": {
+            "Macrolophus pygmaeus": {
+              "precision": 0.4524793388429752,
+              "recall": 0.8656126482213439,
+              "tp": 219,
+              "fp": 265,
+              "fn": 34
+            },
+            "Nesidiocoris tenuis": {
+              "precision": 0.3901098901098901,
+              "recall": 0.8987341772151899,
+              "tp": 71,
+              "fp": 111,
+              "fn": 8
+            },
+            "Trialeurodes vaporariorum": {
+              "precision": 0.3886036960985626,
+              "recall": 0.8477043673012318,
+              "tp": 757,
+              "fp": 1191,
+              "fn": 136
+            }
+          }
+        },
+        {
+          "end2end": true,
+          "iou": 0.7,
+          "conf": 0.25,
+          "map50": 0.6617351497623557,
+          "ap50_per_class": {
+            "Macrolophus pygmaeus": 0.6444166817721976,
+            "Nesidiocoris tenuis": 0.7254395254991273,
+            "Trialeurodes vaporariorum": 0.6153492420157424
+          },
+          "precision": 0.6097560975609756,
+          "recall": 0.7551020408163265,
+          "per_class": {
+            "Macrolophus pygmaeus": {
+              "precision": 0.7295081967213115,
+              "recall": 0.7035573122529645,
+              "tp": 178,
+              "fp": 66,
+              "fn": 75
+            },
+            "Nesidiocoris tenuis": {
+              "precision": 0.6336633663366337,
+              "recall": 0.810126582278481,
+              "tp": 64,
+              "fp": 37,
+              "fn": 15
+            },
+            "Trialeurodes vaporariorum": {
+              "precision": 0.5827645051194539,
+              "recall": 0.7648376259798432,
+              "tp": 683,
+              "fp": 489,
+              "fn": 210
+            }
+          }
+        },
+        {
+          "end2end": true,
+          "iou": 0.7,
+          "conf": 0.5,
+          "map50": 0.37490053376487537,
+          "ap50_per_class": {
+            "Macrolophus pygmaeus": 0.27714332124099844,
+            "Nesidiocoris tenuis": 0.5396705935260894,
+            "Trialeurodes vaporariorum": 0.3078876865275382
+          },
+          "precision": 0.845703125,
+          "recall": 0.35346938775510206,
+          "per_class": {
+            "Macrolophus pygmaeus": {
+              "precision": 0.9726027397260274,
+              "recall": 0.28063241106719367,
+              "tp": 71,
+              "fp": 2,
+              "fn": 182
+            },
+            "Nesidiocoris tenuis": {
+              "precision": 0.8490566037735849,
+              "recall": 0.569620253164557,
+              "tp": 45,
+              "fp": 8,
+              "fn": 34
+            },
+            "Trialeurodes vaporariorum": {
+              "precision": 0.8212435233160622,
+              "recall": 0.35498320268757,
+              "tp": 317,
+              "fp": 69,
+              "fn": 576
+            }
+          }
+        },
+        {
+          "end2end": false,
+          "iou": 0.3,
+          "conf": 0.001,
+          "map50": 0.8074359490019064,
+          "ap50_per_class": {
+            "Macrolophus pygmaeus": 0.8641230080516634,
+            "Nesidiocoris tenuis": 0.8625527720910757,
+            "Trialeurodes vaporariorum": 0.6956320668629804
+          },
+          "precision": 0.12688381137579,
+          "recall": 0.8522448979591837,
+          "per_class": {
+            "Macrolophus pygmaeus": {
+              "precision": 0.1415929203539823,
+              "recall": 0.9486166007905138,
+              "tp": 240,
+              "fp": 1455,
+              "fn": 13
+            },
+            "Nesidiocoris tenuis": {
+              "precision": 0.16628175519630484,
+              "recall": 0.9113924050632911,
+              "tp": 72,
+              "fp": 361,
+              "fn": 7
+            },
+            "Trialeurodes vaporariorum": {
+              "precision": 0.12,
+              "recall": 0.8197088465845465,
+              "tp": 732,
+              "fp": 5368,
+              "fn": 161
+            }
+          }
+        },
+        {
+          "end2end": false,
+          "iou": 0.3,
+          "conf": 0.1,
+          "map50": 0.789841470226928,
+          "ap50_per_class": {
+            "Macrolophus pygmaeus": 0.8304524470105403,
+            "Nesidiocoris tenuis": 0.8482618847556012,
+            "Trialeurodes vaporariorum": 0.6908100789146422
+          },
+          "precision": 0.5737704918032787,
+          "recall": 0.8285714285714286,
+          "per_class": {
+            "Macrolophus pygmaeus": {
+              "precision": 0.7056962025316456,
+              "recall": 0.8814229249011858,
+              "tp": 223,
+              "fp": 93,
+              "fn": 30
+            },
+            "Nesidiocoris tenuis": {
+              "precision": 0.5882352941176471,
+              "recall": 0.8860759493670886,
+              "tp": 70,
+              "fp": 49,
+              "fn": 9
+            },
+            "Trialeurodes vaporariorum": {
+              "precision": 0.5412293853073463,
+              "recall": 0.8085106382978723,
+              "tp": 722,
+              "fp": 612,
+              "fn": 171
+            }
+          }
+        },
+        {
+          "end2end": false,
+          "iou": 0.3,
+          "conf": 0.25,
+          "map50": 0.7583543430414911,
+          "ap50_per_class": {
+            "Macrolophus pygmaeus": 0.7616364665482191,
+            "Nesidiocoris tenuis": 0.8394011252619303,
+            "Trialeurodes vaporariorum": 0.6740254373143237
+          },
+          "precision": 0.6877667140825036,
+          "recall": 0.7893877551020408,
+          "per_class": {
+            "Macrolophus pygmaeus": {
+              "precision": 0.8553191489361702,
+              "recall": 0.7944664031620553,
+              "tp": 201,
+              "fp": 34,
+              "fn": 52
+            },
+            "Nesidiocoris tenuis": {
+              "precision": 0.711340206185567,
+              "recall": 0.8734177215189873,
+              "tp": 69,
+              "fp": 28,
+              "fn": 10
+            },
+            "Trialeurodes vaporariorum": {
+              "precision": 0.648975791433892,
+              "recall": 0.780515117581187,
+              "tp": 697,
+              "fp": 377,
+              "fn": 196
+            }
+          }
+        },
+        {
+          "end2end": false,
+          "iou": 0.3,
+          "conf": 0.5,
+          "map50": 0.6416327082528391,
+          "ap50_per_class": {
+            "Macrolophus pygmaeus": 0.5676420246965306,
+            "Nesidiocoris tenuis": 0.7760474356177218,
+            "Trialeurodes vaporariorum": 0.581208664444265
+          },
+          "precision": 0.8326359832635983,
+          "recall": 0.649795918367347,
+          "per_class": {
+            "Macrolophus pygmaeus": {
+              "precision": 0.9483870967741935,
+              "recall": 0.5810276679841897,
+              "tp": 147,
+              "fp": 8,
+              "fn": 106
+            },
+            "Nesidiocoris tenuis": {
+              "precision": 0.875,
+              "recall": 0.7974683544303798,
+              "tp": 63,
+              "fp": 9,
+              "fn": 16
+            },
+            "Trialeurodes vaporariorum": {
+              "precision": 0.803840877914952,
+              "recall": 0.6562150055991042,
+              "tp": 586,
+              "fp": 143,
+              "fn": 307
+            }
+          }
+        },
+        {
+          "end2end": false,
+          "iou": 0.7,
+          "conf": 0.001,
+          "map50": 0.8161653344241883,
+          "ap50_per_class": {
+            "Macrolophus pygmaeus": 0.8533386269001924,
+            "Nesidiocoris tenuis": 0.8917031306589456,
+            "Trialeurodes vaporariorum": 0.703454245713427
+          },
+          "precision": 0.10621990763486293,
+          "recall": 0.8824489795918368,
+          "per_class": {
+            "Macrolophus pygmaeus": {
+              "precision": 0.1024247491638796,
+              "recall": 0.9683794466403162,
+              "tp": 245,
+              "fp": 2147,
+              "fn": 8
+            },
+            "Nesidiocoris tenuis": {
+              "precision": 0.08333333333333333,
+              "recall": 0.9746835443037974,
+              "tp": 77,
+              "fp": 847,
+              "fn": 2
+            },
+            "Trialeurodes vaporariorum": {
+              "precision": 0.11062527328377787,
+              "recall": 0.8499440089585666,
+              "tp": 759,
+              "fp": 6102,
+              "fn": 134
+            }
+          }
+        },
+        {
+          "end2end": false,
+          "iou": 0.7,
+          "conf": 0.1,
+          "map50": 0.79832644429145,
+          "ap50_per_class": {
+            "Macrolophus pygmaeus": 0.8245289090174897,
+            "Nesidiocoris tenuis": 0.872810384611067,
+            "Trialeurodes vaporariorum": 0.6976400392457934
+          },
+          "precision": 0.4466352336048007,
+          "recall": 0.8506122448979592,
+          "per_class": {
+            "Macrolophus pygmaeus": {
+              "precision": 0.5474452554744526,
+              "recall": 0.8893280632411067,
+              "tp": 225,
+              "fp": 186,
+              "fn": 28
+            },
+            "Nesidiocoris tenuis": {
+              "precision": 0.5441176470588235,
+              "recall": 0.9367088607594937,
+              "tp": 74,
+              "fp": 62,
+              "fn": 5
+            },
+            "Trialeurodes vaporariorum": {
+              "precision": 0.416013437849944,
+              "recall": 0.832026875699888,
+              "tp": 743,
+              "fp": 1043,
+              "fn": 150
+            }
+          }
+        },
+        {
+          "end2end": false,
+          "iou": 0.7,
+          "conf": 0.25,
+          "map50": 0.7661394375880995,
+          "ap50_per_class": {
+            "Macrolophus pygmaeus": 0.7629895522866214,
+            "Nesidiocoris tenuis": 0.8562715471701727,
+            "Trialeurodes vaporariorum": 0.6791572133075043
+          },
+          "precision": 0.6012232415902141,
+          "recall": 0.8024489795918367,
+          "per_class": {
+            "Macrolophus pygmaeus": {
+              "precision": 0.7859922178988327,
+              "recall": 0.7984189723320159,
+              "tp": 202,
+              "fp": 55,
+              "fn": 51
+            },
+            "Nesidiocoris tenuis": {
+              "precision": 0.6792452830188679,
+              "recall": 0.9113924050632911,
+              "tp": 72,
+              "fp": 34,
+              "fn": 7
+            },
+            "Trialeurodes vaporariorum": {
+              "precision": 0.5573899371069182,
+              "recall": 0.793952967525196,
+              "tp": 709,
+              "fp": 563,
+              "fn": 184
+            }
+          }
+        },
+        {
+          "end2end": false,
+          "iou": 0.7,
+          "conf": 0.5,
+          "map50": 0.641709160627513,
+          "ap50_per_class": {
+            "Macrolophus pygmaeus": 0.5676420246965306,
+            "Nesidiocoris tenuis": 0.7760474356177218,
+            "Trialeurodes vaporariorum": 0.5814380215682865
+          },
+          "precision": 0.8276220145379024,
+          "recall": 0.6506122448979592,
+          "per_class": {
+            "Macrolophus pygmaeus": {
+              "precision": 0.9483870967741935,
+              "recall": 0.5810276679841897,
+              "tp": 147,
+              "fp": 8,
+              "fn": 106
+            },
+            "Nesidiocoris tenuis": {
+              "precision": 0.863013698630137,
+              "recall": 0.7974683544303798,
+              "tp": 63,
+              "fp": 10,
+              "fn": 16
+            },
+            "Trialeurodes vaporariorum": {
+              "precision": 0.7986394557823129,
+              "recall": 0.6573348264277715,
+              "tp": 587,
+              "fp": 148,
+              "fn": 306
+            }
+          }
+        }
+      ],
+      "pr_definition": "micro P/R at fixed conf, same class, IoU >= 0.5"
+    }
+  },
+  "bonus_tasks": [
+    "6.2",
+    "6.3",
+    "6.4",
+    "6.5"
+  ],
+  "split_images": {
+    "train": [
+      "1197.jpg",
+      "1130.jpg",
+      "1208.jpg",
+      "1225.jpg",
+      "1273.jpg",
+      "1238.jpg",
+      "1084.jpg",
+      "1269.jpg",
+      "1201.jpg",
+      "1031.jpg",
+      "1119.jpg",
+      "1149.jpg",
+      "1044.jpg",
+      "1039.jpg",
+      "1005.jpg",
+      "1250.jpg",
+      "1144.jpg",
+      "1279.jpg",
+      "1041.jpg",
+      "1278.jpg",
+      "1071.jpg",
+      "1075.jpg",
+      "1159.jpg",
+      "1168.jpg",
+      "1276.jpg",
+      "1103.jpg",
+      "1251.jpg",
+      "1064.jpg",
+      "1233.jpg",
+      "1272.jpg",
+      "1192.jpg",
+      "1150.jpg",
+      "1213.jpg",
+      "1017.jpg",
+      "1036.jpg",
+      "1033.jpg",
+      "1117.jpg",
+      "1106.jpg",
+      "1094.jpg",
+      "1118.jpg",
+      "1280.jpg",
+      "1018.jpg",
+      "1042.jpg",
+      "1271.jpg",
+      "1063.jpg",
+      "1074.jpg",
+      "1047.jpg",
+      "1255.jpg",
+      "1070.jpg",
+      "1000.jpg",
+      "1223.jpg",
+      "1092.jpg",
+      "1162.jpg",
+      "1147.jpg",
+      "1155.jpg",
+      "1222.jpg",
+      "1025.jpg",
+      "1008.jpg",
+      "1264.jpg",
+      "1199.jpg",
+      "1141.jpg",
+      "1116.jpg",
+      "1181.jpg",
+      "1010.jpg",
+      "1221.jpg",
+      "1068.jpg",
+      "1128.jpg",
+      "1160.jpg",
+      "1065.jpg",
+      "1275.jpg",
+      "1170.jpg",
+      "1043.jpg",
+      "1121.jpg",
+      "1006.jpg",
+      "1054.jpg",
+      "1090.jpg",
+      "1230.jpg",
+      "1061.jpg",
+      "1260.jpg",
+      "1123.jpg",
+      "1194.jpg",
+      "1083.jpg",
+      "1148.jpg",
+      "1267.jpg",
+      "1013.jpg",
+      "1200.jpg",
+      "1203.jpg",
+      "1093.jpg",
+      "1229.jpg",
+      "1126.jpg",
+      "1167.jpg",
+      "1045.jpg",
+      "1247.jpg",
+      "1246.jpg",
+      "1214.jpg",
+      "1097.jpg",
+      "1072.jpg",
+      "1124.jpg",
+      "1202.jpg",
+      "1236.jpg",
+      "1228.jpg",
+      "1037.jpg",
+      "1028.jpg",
+      "1161.jpg",
+      "1253.jpg",
+      "1133.jpg",
+      "1204.jpg",
+      "1151.jpg",
+      "1219.jpg",
+      "1111.jpg",
+      "1099.jpg",
+      "1218.jpg",
+      "1052.jpg",
+      "1179.jpg",
+      "1182.jpg",
+      "1046.jpg",
+      "1265.jpg",
+      "1091.jpg",
+      "1190.jpg",
+      "1262.jpg",
+      "1060.jpg",
+      "1140.jpg",
+      "1138.jpg",
+      "1132.jpg",
+      "1254.jpg",
+      "1277.jpg",
+      "1109.jpg",
+      "1098.jpg",
+      "1152.jpg",
+      "1102.jpg",
+      "1082.jpg",
+      "1166.jpg",
+      "1050.jpg",
+      "1164.jpg",
+      "1035.jpg",
+      "1122.jpg",
+      "1198.jpg",
+      "1014.jpg",
+      "1189.jpg",
+      "1139.jpg",
+      "1015.jpg",
+      "1089.jpg",
+      "1080.jpg",
+      "1142.jpg",
+      "1211.jpg",
+      "1196.jpg",
+      "1258.jpg",
+      "1053.jpg",
+      "1212.jpg",
+      "1100.jpg",
+      "1220.jpg",
+      "1283.jpg",
+      "1173.jpg",
+      "1032.jpg",
+      "1009.jpg",
+      "1087.jpg",
+      "1215.jpg",
+      "1242.jpg",
+      "1131.jpg",
+      "1157.jpg",
+      "1016.jpg",
+      "1105.jpg",
+      "1205.jpg",
+      "1226.jpg",
+      "1077.jpg",
+      "1110.jpg",
+      "1113.jpg",
+      "1030.jpg",
+      "1172.jpg",
+      "1129.jpg",
+      "1281.jpg",
+      "1239.jpg",
+      "1001.jpg",
+      "1248.jpg",
+      "1002.jpg",
+      "1266.jpg",
+      "1012.jpg",
+      "1177.jpg",
+      "1259.jpg",
+      "1112.jpg",
+      "1011.jpg",
+      "1252.jpg",
+      "1048.jpg",
+      "1165.jpg",
+      "1180.jpg",
+      "1051.jpg",
+      "1231.jpg",
+      "1088.jpg",
+      "1135.jpg",
+      "1023.jpg",
+      "1206.jpg",
+      "1195.jpg",
+      "1038.jpg",
+      "1178.jpg",
+      "1055.jpg",
+      "1020.jpg",
+      "1137.jpg",
+      "1034.jpg"
+    ],
+    "val": [
+      "1027.jpg",
+      "1114.jpg",
+      "1057.jpg",
+      "1224.jpg",
+      "1153.jpg",
+      "1171.jpg",
+      "1154.jpg",
+      "1136.jpg",
+      "1040.jpg",
+      "1216.jpg",
+      "1270.jpg",
+      "1175.jpg",
+      "1022.jpg",
+      "1019.jpg",
+      "1282.jpg",
+      "1244.jpg",
+      "1174.jpg",
+      "1243.jpg",
+      "1108.jpg",
+      "1234.jpg",
+      "1004.jpg",
+      "1217.jpg",
+      "1096.jpg",
+      "1081.jpg",
+      "1079.jpg",
+      "1183.jpg",
+      "1227.jpg",
+      "1145.jpg",
+      "1085.jpg",
+      "1232.jpg",
+      "1003.jpg",
+      "1235.jpg",
+      "1026.jpg",
+      "1143.jpg",
+      "1256.jpg",
+      "1158.jpg",
+      "1066.jpg",
+      "1163.jpg",
+      "1261.jpg",
+      "1237.jpg",
+      "1107.jpg",
+      "1209.jpg"
+    ],
+    "test": [
+      "1076.jpg",
+      "1156.jpg",
+      "1210.jpg",
+      "1146.jpg",
+      "1134.jpg",
+      "1067.jpg",
+      "1193.jpg",
+      "1249.jpg",
+      "1245.jpg",
+      "1024.jpg",
+      "1268.jpg",
+      "1059.jpg",
+      "1185.jpg",
+      "1021.jpg",
+      "1257.jpg",
+      "1186.jpg",
+      "1188.jpg",
+      "1062.jpg",
+      "1086.jpg",
+      "1125.jpg",
+      "1101.jpg",
+      "1240.jpg",
+      "1049.jpg",
+      "1058.jpg",
+      "1187.jpg",
+      "1169.jpg",
+      "1274.jpg",
+      "1207.jpg",
+      "1241.jpg",
+      "1056.jpg",
+      "1073.jpg",
+      "1263.jpg",
+      "1115.jpg",
+      "1191.jpg",
+      "1104.jpg",
+      "1176.jpg",
+      "1007.jpg",
+      "1069.jpg",
+      "1127.jpg",
+      "1078.jpg",
+      "1120.jpg",
+      "1029.jpg",
+      "1184.jpg",
+      "1095.jpg"
+    ]
+  },
+  "dataset_images_sha256": {
+    "1000.jpg": "5473b51b78c8a499038b74997425edd53f5722aa7f0a369367133b5dfbc7c968",
+    "1001.jpg": "21db82dd5ba593aabd307f850c83af12b27b5093f2ed40ef3bb22ded98a707dc",
+    "1002.jpg": "f312415f0af9bd5ddbc64c89ea3605c958d742d7f55c5ca778de300d0879abbf",
+    "1003.jpg": "d83ad4a12b793ed814d7f4472be6c0611cbecb52ac37e09c0289597dce1d870f",
+    "1004.jpg": "85ad73f8ef4fe59d9449ceb311ffb4f5196ca50880f1d8471840277edb15170c",
+    "1005.jpg": "80a721b58341aaaf34f048a4f6dbcef824547901a0df52afe319453f973312a8",
+    "1006.jpg": "0031cc29c860e662135d64fd293cb70141d893208434d91cb5e801222e76aa49",
+    "1007.jpg": "f29546be33a0ae8f0240660dfb97f40f7c9d3f581b98a6cbca92246740c39292",
+    "1008.jpg": "2e1ad75580ac3c717c3d02ff511db733cb8d62a4a6e44231f7d538ef3397d92d",
+    "1009.jpg": "1a007c5a71d8ade81720e3ccf179ca67bfae6840bbc4161643450092fac82849",
+    "1010.jpg": "43e639ac96f6bf1de5315650b6bacc2a431595d0328fca7f3d63842a198c4d6d",
+    "1011.jpg": "67448d517b396831872f00de1bfaf6127e15171a6bda15d3c875a4fa88fe2eec",
+    "1012.jpg": "aa53acd90c2a1c3ef8f91d4c534fe7b503d4b350edc4c25e03fda2e6fc06491a",
+    "1013.jpg": "5565ff71b63357ca8bfb44398f6e90a532cc7876180cdfdcfd04e10b3a8f2772",
+    "1014.jpg": "a230fd0941f8ec688c3f889c52fb37df73ceb9397d23bf30c7e78147a7a29b52",
+    "1015.jpg": "979bf9cfd13f12e1421a76d9ed01f67ae447aa5b7ecc9d58a2d7e73b64254191",
+    "1016.jpg": "173a03acfa864aacec6a9e54a0050df5c0ced04959919b76c70789d047e07d47",
+    "1017.jpg": "44f550f00e19455e12f7532746a62ab7e61bbe1ae16190eeca0175cfe7ca4cae",
+    "1018.jpg": "9ebffc50c301f9b0397a39dbc2b125de0441012588bf8f5e14c24e3a541d8d16",
+    "1019.jpg": "994e506513a3cc894e089453c5d697667289cdd8ab546ddf64909cec5caa9b63",
+    "1020.jpg": "65e1892eda4d0832b1bb8adc63e9ad40063e775fe30ddd9201beaaefe26b6d19",
+    "1021.jpg": "9c7f114689ecea0347ca622cba13319a0471dec9855fcd6aea2a96fa77aaac01",
+    "1022.jpg": "9361060a71fc20de99ec262089121edbfe5d97e8fb7dd9f15c0ff3aef31a0870",
+    "1023.jpg": "0cece00c5211b3a01fca093654602de211f0c7867c0d992bc6f10d3eba88521b",
+    "1024.jpg": "cfc31635f173f4f8f4f2c7f9130b8617f8d600e4d74a84c68a7537f87f8714f4",
+    "1025.jpg": "80f01c93d54d6c7153aeb04ef4627193d592824af2d5d7ee8f75c5fb00588fc9",
+    "1026.jpg": "a897b8d97d074f4da29bc0dc3cccdd0216c8b84b8983e444d0d67cc730ea31c3",
+    "1027.jpg": "f5afc2ebd096b13a9babe8a8280a66cf6175e02c4ddd3ce40f265a3696ccfd1f",
+    "1028.jpg": "cfcccfece3c55c3e34fb66ae544b5821adb3423eb6a6ce935579c668cad0d49a",
+    "1029.jpg": "983b72496b95902c3015e8cef0edb6eb8885adcf269c815294c3ab5564602e13",
+    "1030.jpg": "76b20209374b39d0865e1f4da4fa19a3993d23ddea9d472e8cb3b81737dcd9fb",
+    "1031.jpg": "3d58e5ff7b32e44cf03a2b8f459867d4ad1ab8c8096535ff72e9205fa166b142",
+    "1032.jpg": "df786c5e232c16a1c470fa15bf368522e00e0d12017b94629f1cc131a64bb20a",
+    "1033.jpg": "951d98fd371d27b5638525e3fab2d036a9f9f0dffe181187339bc80ec4f4357e",
+    "1034.jpg": "b00c520d1b5d0b3709b890fd3912d51854b74990c4bb7340a7c636ab8ee2c769",
+    "1035.jpg": "f70d1cc20d1f87312548d114feda8414e62862eadb08892dd91cb7598e9e0a29",
+    "1036.jpg": "6c84986690a286506f40c31516c19a596b8d712ee85fc548b13aecf9a0b135e9",
+    "1037.jpg": "22b9fdef3812bbf8ff191c5585581b8bc4ff88d58ca899ace7cf9b67b90b4373",
+    "1038.jpg": "40a07d34ffb78644af467de74fab21c4ddb62f2c7bf12468a50262e070084d3d",
+    "1039.jpg": "9079db54842ec7a63b57f3fca2d7a749df06a6b5ee7a35d142e7d88394412503",
+    "1040.jpg": "856adcf5403086cbcd08ded8de2dcda3e8476276bfb23cef16833a0499914e29",
+    "1041.jpg": "bce2eec2c2cc26fed770746a1744c0c7a06b2aefa9f0c18b2bba0a56baf32e66",
+    "1042.jpg": "030157e62c78e5fc08e7a39b2aab18ad252c5b4fba60f76d34d7dd5d35134f24",
+    "1043.jpg": "dcaef27b410c291748bc9707c8f8e80625aef4ea250da43a6f6c24adf016d107",
+    "1044.jpg": "b49a22fa5de04693bfb0d06705d0446b3f3f43deccbc116911ecdec2c6554f98",
+    "1045.jpg": "91d242ab35937505ca0b49f84ce83322e53aaceca8e9cea226aa2f91412659fb",
+    "1046.jpg": "1963f9c259c8b9c649bd2423a616381dfeb523f4fe7e6d7041594801fe4b38a1",
+    "1047.jpg": "83f5b29e79ab11984585646ba45c67d0cd2fa837f19731a92df92b1979f0a66e",
+    "1048.jpg": "f0979f5ad4d320fd9a24c4a2247a7f64c85c23f861f89fffb2f1c1d260c3a8f1",
+    "1049.jpg": "e7e1371267deccb21298a92b48aabe3672a731e5c5c3a096a7899558f1ae9f84",
+    "1050.jpg": "d10b5aac7c46d3ad44a1ed8a9faef969578c4aa9fcd670b894d521c0c3375cff",
+    "1051.jpg": "df93b6e4190f908c502a9a132390287d9e2f545d8986bcb10921e29c6de26f41",
+    "1052.jpg": "a6c729a3144af1cae1de30b8b63948aed59d63fac8029fd794cbbfa45bcfcb64",
+    "1053.jpg": "38c3231f55ce105dfbfac17911b173c1cf2d2d06d875f655a581ff17007edff2",
+    "1054.jpg": "a0d6ad1c442834eaf581529bffd82e92513f3448b5d632618dea060db3546d36",
+    "1055.jpg": "67773608e6ef9fae7c5ef4ddd40c9d6384ef11c4cae2e04582417b61200210a6",
+    "1056.jpg": "be1f812d72c4e2d8e9fb50014079c13d41d2770d603f6b05a5049faa6d866c38",
+    "1057.jpg": "59ae2f2fc0db65a9233e76b636e65571f05376e8cb1386d7850d6514152704c3",
+    "1058.jpg": "656fc3352868d71a11d0c7ea8d2c11740dead68695aebe0b7797caf13f0516e6",
+    "1059.jpg": "209e17091c749de870067abbc54d1ca72f0391afae0abca9e3816c54d10452df",
+    "1060.jpg": "c04504e01ecfd6a5ee6041a2c46c96c63dba66a8f79213221fd2153bbe87ef22",
+    "1061.jpg": "d69cde1aadab3c914d0931b14e2d755fb244722104fb0408787848127913d429",
+    "1062.jpg": "77a0054a3f9c9f6356a30a2654e595136ec8150d29582050c8c8a9639655a3b1",
+    "1063.jpg": "468fbdbe6995ef01a32ae900df8093664e2cb45ca3e1122259410271135c326a",
+    "1064.jpg": "3c580c1cc7ae63f33ba461bfaec5adae1cc0fbb31ec0c41a273fba30d21231cb",
+    "1065.jpg": "8e74398e261c4f0d71846d0fed3e9655dfdbea65a126a994db31ee457a1ca2de",
+    "1066.jpg": "b55eb638b5c184e0ef4db47fc1190ba3e10fe91b9cd161df7b83a2079deaefec",
+    "1067.jpg": "94083981d86812dc76301a0251d3e6d3686590cf0f9de474a568c938443269f3",
+    "1068.jpg": "7c2068ef8d19b1d99ac12fb854273f492aa917519e3edca595e968e850d28b59",
+    "1069.jpg": "4f0e256341d9c341ffe0c85c704d32de4941aa127aa733ddd7a62f6de81f833b",
+    "1070.jpg": "e319e7624ae598cf42baed217e43f664f48c7f07e505e65cf44ab63495e8b218",
+    "1071.jpg": "e7a8d4e07c8a62f759887e809b97957771e0f2210b81f63d2d862e5afb440d72",
+    "1072.jpg": "6501751bfb1ed67a09782f6453ca7b797c6c77e22e6e6829425dba8b6f617339",
+    "1073.jpg": "a7bf53d109f109b7fe82a7c42f8f17ebe24a7292e5eb514edc65150bef54e589",
+    "1074.jpg": "baf87e6258ea4fe506a373f3862bb28a6f464b20c5e8e6e7a5587b0c3aae8f83",
+    "1075.jpg": "8f369011e901c005895d40e9dc1b7d8a5b1245ad949feca41a7977b6ea6aa8e6",
+    "1076.jpg": "bcec6c631871869fcbe700c04a9ab3c38b2e816f951ffe115d14d759e9930b65",
+    "1077.jpg": "fb8a3f927b6e3eb5289783f3245333a37079d63417e7e8c22543f2043e979c52",
+    "1078.jpg": "97d83a23c3bd8611a6a8ffcb99c38b887dfa1eca8c435ff534766a6f9bc63070",
+    "1079.jpg": "1dfc8c8759af0aa25e1cb5a3a967d4cfd838f8c38507559fc2c2a894d9f0ff62",
+    "1080.jpg": "e82c339be23c7a01ec5410638260d5c5e47006e35edd8af47d4c9cb67faa6e31",
+    "1081.jpg": "8ed336297f576aa5c8c395c637e85759c4de6e8b70fe784db7398e02b13c4ce9",
+    "1082.jpg": "2ea87eb17632e3cc8b6afc1128bb5a47ffa7d166f2feaf784c7a5102f6176a4f",
+    "1083.jpg": "46e73dea1337cb979458e748443213f1bab0160c55b216178b8af677a25d3df0",
+    "1084.jpg": "16b06a12ac782d0d6ffb1195e16a45cb350567b15639c07650e02e29cb1a3b43",
+    "1085.jpg": "a5beb2c20d2f8c50a364ec92e0c9b6694a9a35c8537c355572b2434f7fd484fe",
+    "1086.jpg": "c9b0c6f5e29bf1742ad1245c758aeba47561f5b47cb68dda1c5f823a4041d9de",
+    "1087.jpg": "0de80b6c7950490d3347c04ac9bbf59bd951c3b4f64bd79bde033a7746313338",
+    "1088.jpg": "cf6f380d4588ae2ab7a35e4ea8abe06d04b5f639feb4c054e98a1d91bf8516fa",
+    "1089.jpg": "85ad1b2ae7019f1d5e7b9a3564aecf6018c3ce127022ba64fa5f88dbf110990c",
+    "1090.jpg": "421d1a3da6223d78b48e88fdf791d896a7e2ee633752b61b3560d40982c311e4",
+    "1091.jpg": "6a171b1ac4aae2c2b8ffedde7fdf30379c96362f116c754747c4ed17b73f3483",
+    "1092.jpg": "ca1f523216a281800185d7161cfbc144e9b592cf052ae97fa5acece9df9c2b49",
+    "1093.jpg": "ea8875876596ba9d16f1cf934b39ffbf943098f5ed4a0269b400bf88ce544db8",
+    "1094.jpg": "583745158025c7a015fe0c619076a83acf5174c6d0acafd2d8877520df8f668a",
+    "1095.jpg": "52db143d5e40a10681c71868ccc6ae6ed18a29a03a4338cb3a7443fbefa950ef",
+    "1096.jpg": "a5ee3df509c5c491a22eb7dc033ecbe94551fc8f235cae19b3f42e07eebc38e2",
+    "1097.jpg": "0388f03932fbec91782d270e25c671fb4a64980ecf8544e51b17f0c3e7072ed8",
+    "1098.jpg": "cc1e8af38e5a0c525fb00a0aa1c29891c4854bb468683e803a15f023d847bdf1",
+    "1099.jpg": "eb279cf3bf75d1054d15b4de225a7286bf7480d5c106de0ff58bc771009b5bdf",
+    "1100.jpg": "8434de25ee21f5908e29777aae51a223c0ee5986c4fe9694ae3005df9d98924b",
+    "1101.jpg": "1f51395d34bba37554b2220a079451c32429750a495adcff4ff02429acce82c1",
+    "1102.jpg": "b314e5981062e121142f54b46daa10f1260c35707a33f0cb0dfae7efc5a8b2cb",
+    "1103.jpg": "64e2731c51952720737f36d348b98147e64dcb125e13f1b2d6948cad89bc8539",
+    "1104.jpg": "856767990c0ab8478479aed5571030fa32f207ae20e3e6b696b61a449a3be748",
+    "1105.jpg": "86ea6db5c36f0d06534b8a9446f16a66bf0c029618b25b41af0f0557eb3e9eb4",
+    "1106.jpg": "ef7742a4aca3c9ad9b6aee6e321e2dbed732d9efcca80fdfee27c6a16c1972b6",
+    "1107.jpg": "bb76869a61572eb4797ef5eaf9c82d61de8ee13d491f036337d20c80421dc600",
+    "1108.jpg": "d93ea48836c2416e47ac03bffa2a42fb9f40c03a3f8c994afd59a554b3c93ba8",
+    "1109.jpg": "84256fb4802b712a226631cf45efd578a06f06cd6fa38494fa8bb36dcf2f341d",
+    "1110.jpg": "883422811171612e25d63f9acb81f047102348b68ee2c01c64e982b1ccf64b99",
+    "1111.jpg": "812f9833bb90b6bc70f1b27c8b15c297cfb7b97ff10621c487ee5d59bb8dae91",
+    "1112.jpg": "17b4826918f5b4e8028ecc607d156f88592c286edaf65474802bed344d208a97",
+    "1113.jpg": "2071c435e7ef60b49bba58a86933949e32b733aeb5ac1c057895299dba2cd166",
+    "1114.jpg": "4c8e8655f7e27b3c1c99a5673f4eaa92728da2f7adc40541ce1be2b8d9432124",
+    "1115.jpg": "15a1c978ef45ef2b15513bcfd32dadc44905249c421e85e30223f4645ab41ea2",
+    "1116.jpg": "3c9defd93934212fb2536f75ed1f892480c6d8ea1db20eb9e8a43b14c731c23a",
+    "1117.jpg": "3b8e164fffdbb383efae7c854f81eed9664ddc7c6274925557ffcf477bd7b022",
+    "1118.jpg": "7488648d9f6128dcbf4aec5c5388cd61e06fbb3f74275c5e22dcc98b08e20a01",
+    "1119.jpg": "51cae6732eb35a039adaa4bb3c156c95e1cb54f6de9f059f022be35a1a5131d4",
+    "1120.jpg": "0ce64af08c75d3cac3a1013aa9eda373d3f3544a1108cbf3eb060377ae575d44",
+    "1121.jpg": "d18ddc759f0c6316e3efc22f9555fa07e59dc6f29ef2da3fffa6c8df57506d3e",
+    "1122.jpg": "500a48f37c4ceb3a3af3aeca3a10e28aadb31389e602de99ffc4c9c5c8cd0717",
+    "1123.jpg": "597599ae2fb67c5c67733c506e0e42c8a8fcea66c9dfb6fadd6da5f07e85f99d",
+    "1124.jpg": "5f8d678f5f5d80a94f848e1c37ce0ecc0b8a56d32a23f79271b7ecfce73c1383",
+    "1125.jpg": "773d40ab384800c3521a151fbfaf5929a0f0104151147817b0983b0d3b1a2f8e",
+    "1126.jpg": "45b9335c21c1500cd7e3a3199333bc79a26f5a0a5df0feddf9b4f5dba8da1058",
+    "1127.jpg": "0c9cb9b4534321f07dbb7debf693336141f268827c44438041a053c134d44984",
+    "1128.jpg": "5a4186f0495bbc582b9f6a880445ff324fb67534779fb5fcef2aab55416cc4f2",
+    "1129.jpg": "04c7683c4221bbbddadb0a548415190d4e696f6fa0fd29449a1e343136e9abcc",
+    "1130.jpg": "cb8eea1c81818a047073ebd879199a1babaa25cb954d50971fd119ed400a1d1a",
+    "1131.jpg": "662f9161b7b9ef4c2567b961a836c3f35fbd2bc0ec29370678e9303f4f92aa23",
+    "1132.jpg": "317d36b97844c5da1a24c6f29ac869f0dafbe3bf2f0acb1ee8f36ab9d852e1ff",
+    "1133.jpg": "6a623d3a8e46b6aca748ae6bad7af790b9bd9d4570f966004f108d86c5e1cedc",
+    "1134.jpg": "5edc71be404d1c513d5c489480248b34cc1387897bfdb2b8f4df813e24ff5853",
+    "1135.jpg": "c9293588653845a821f4a8bef7be11e98b0b2d4d69feb294077d5fc75d457f0f",
+    "1136.jpg": "1078198c0bcae6aea71dba102773b9186cf0ef10406753e85902f4db1ba8d4be",
+    "1137.jpg": "53ad6f1375192522f9b8cd77477be9be613b858da1ac3fbbf3d5d448b55f6326",
+    "1138.jpg": "d57ab5c3b978aa3490e61677467e2fe48bce5661b94db30eb83b4cab874913b0",
+    "1139.jpg": "20a18f5103dde116e8f20d7b74386813ec22d11b0eba9f94d2c0c64fbbef2c56",
+    "1140.jpg": "a93792f9f17230b8c6cd4f3361927db18539452ea86282376823ba19658fa802",
+    "1141.jpg": "3d1b1f1be9ff6bd47407a0626d782810f6410c7ba2a565afbe11ec488f0d26d1",
+    "1142.jpg": "3fa8fa589b9eb4c9839085d1d7804ea40f68d5654b2c12d7266591d71f77d2d7",
+    "1143.jpg": "d2319814dabdebde2784bd8aafef3d6f8e9f27a8948db7e960d4ed1618529106",
+    "1144.jpg": "3aa03dd2c102306b68fcfa4ee0d73e9906e86faf15bfcef8455e814b73e26164",
+    "1145.jpg": "2685449e337ce984d4e47e98a5728178e13ae144fb7bfa2127cee04f44cd16a4",
+    "1146.jpg": "8117588ee00ca3aee607a7f904223b32d6351cb356bc50b72b32b15e5ae314c6",
+    "1147.jpg": "c6051803585119a528a126af79cf092be1a19da873aedbdfa59068172aa64757",
+    "1148.jpg": "6914a7f36d5f51b705f982a77e3aa9e719311ab4671685b9d8ab05e0fc06d3bd",
+    "1149.jpg": "988ad1edafa9229642dff4e710c8e6aa3689c870f3b363ce54284904f7e734f3",
+    "1150.jpg": "a8bc0db369eec5c6e775c508e644bc43bc93f9da4f19c22a883fab6278d62af3",
+    "1151.jpg": "e409d54acda529387c9861b8923cdb785e7bc7cc21d7d07db76ad17fb19b7d34",
+    "1152.jpg": "f9e7f7163606d8a59d78c149d5af2d342892477a99265249d2f3ccfb6ff2731d",
+    "1153.jpg": "aee41a468af1dc5c113f8e406ac1164b121f8347b1d824fba1feaed2255737f6",
+    "1154.jpg": "59ace8d804df0137170af6dfbd9a4667174ebc4f2de6554637f70ab6f98c8300",
+    "1155.jpg": "9a803d4dab89818f0d3a1ee003d4f796c6f93d078e38155d4db2557b8b796abc",
+    "1156.jpg": "8a50546a20ef6312336461c6f99bc51570025377ba7eeb2047f51065d206f60e",
+    "1157.jpg": "91e57cd189c82ad10fb59b21e9b3a8fe9ad70ab6b87f7651bc4eef4d62105121",
+    "1158.jpg": "877f7bb879d1860bc86a342f39f253bb8bdbcdb34f87191d8915f82e03765f6d",
+    "1159.jpg": "101760195be1de2fa214aca7cb0593a68d8fd8a7fea2d11cebeb889f9ceb02f8",
+    "1160.jpg": "14330323aec9f4ac041f749f83476f8babedb898f2e86e014f2195b4348ef4d5",
+    "1161.jpg": "abc948ba35e6f0a4421bf27da933bd6b7eaf087102e87c6790c7fa46a99f29e9",
+    "1162.jpg": "db4a4e56462758201802111580aa8e8813af3dd148aa383d204ae1baea94ab05",
+    "1163.jpg": "5d3f63f1dd7f014ab41891d657524bb1a4d8aff27eb326ef7ab440cc5cbf7829",
+    "1164.jpg": "6c2f681198f5107c8fb5849951e0a804f46f2c7f14b5dfcaa748c496a6b3869a",
+    "1165.jpg": "e6a71b369b68f8bbce323223785d5688e09d625d2bdeb5a2a5746a2f7b4c870f",
+    "1166.jpg": "ed4e9addc417d5ed7d82271d9e07c4c32c7086f31ff000d55099d75f85ee57eb",
+    "1167.jpg": "ae5bb2ea0048087e5d2b1982dcc40106e4d78e72ee3ab6ef171161cf86e9a3eb",
+    "1168.jpg": "c9d946354243b4dc7995b2d6d23f47394cb7edbe8d331d69f765f58bb361a3fa",
+    "1169.jpg": "f288b22045b813a3656066e49e303e26c06eaa787b4d12694fe2efa134d6140f",
+    "1170.jpg": "9a7ebe0543510dc808a9f2c468c495fbdd745972a3a53ee06ba450223ec1341e",
+    "1171.jpg": "636124f1e8223ca291aa23873f78436571ca36cd21c65eb2f9e66308dc7ab2f1",
+    "1172.jpg": "7f69ca395621f6be39e83c7e5e54c989c0f982f650fc518e8baad807f27f4db9",
+    "1173.jpg": "ee43d8f05a3e26032f7020edbf9ca58f658c158cffe30fef9dad13fb0410904e",
+    "1174.jpg": "3bc90c08fc8ccdeff1d50c808246caa25af83a1b412e5e7f983a84dfda7ad776",
+    "1175.jpg": "38a0847cb301364b6ee1802f8f96b357f369f5220969b8d0750bd3ef832b1ee0",
+    "1176.jpg": "4a20f4d3efac462a8afbdc75f191ffa5a759b8125d4ad12185e95f9286ae977a",
+    "1177.jpg": "ac578e62a317ed0cae4cab9e9763dc2bdb8e861b2141da55a8eb96060907eceb",
+    "1178.jpg": "bcee1ccee340d867a14a823c8fc317e99c293eee6e50c06e0266601d5e325761",
+    "1179.jpg": "384e38ed8076e5acce36c4c482e3f0fa54e226ed8896981d50250169fa7e9c98",
+    "1180.jpg": "de9d685112cc82d7a92ffa7549c6ef01926be8fabdf79de213eeb825b25dcc52",
+    "1181.jpg": "af242f4f72a920d7070d60b1282a2b2d78dc73c4682eac43b62d9784bc98c553",
+    "1182.jpg": "e3d7a750e644a55de370a21afd27aed81270cee4c3b88e84e177c47493614578",
+    "1183.jpg": "7710cee4077af51a9ecdafbb75f0567b12e515d1da3bb0cb1a4ed96b97b413f8",
+    "1184.jpg": "cbb65800bdbc905e45857c08d0ab2bbb9d08b718353b3e43aa0ffb1c48af0560",
+    "1185.jpg": "b60453e6a42dd58f6ae9ea7813d791da895014f70107ff77c49fadc512f19d5b",
+    "1186.jpg": "e867a49984d75686b6e8ed50471e382415c2d8b41c2e7e357412bbd801dc8419",
+    "1187.jpg": "65ad751e30cf942278e2bef6279693c00b63e847aa1530daf56149535b1414d4",
+    "1188.jpg": "454d2dc660dddb999d03e59a73f68a0a08c96119c5f8d0d35bad28a07ca3ba9f",
+    "1189.jpg": "4634d9819224854aa7f6dca20037fc6b2aa4a66602c9114b45d023c2608a4a04",
+    "1190.jpg": "020231dc4a0ecfcd6daad7f2d6baab88d395a602411f521375827b1cf4a973ff",
+    "1191.jpg": "6fca4351e1bfbede5d2531f691957edb7879eec74459e64300c71d5857b411dc",
+    "1192.jpg": "e88adb1df38af344cde60428ce063138b11eff2b14ed1e51e11fa92cef1f1f43",
+    "1193.jpg": "2b17543f918a7b773dab89ce6d8ca3117828b9e045b3dd6452500c1a6dcfee22",
+    "1194.jpg": "38d68729029aba0474c240d88b717589e5ab6deeaa83025229ee8ade6a076738",
+    "1195.jpg": "09b355218a24f2bad7a6cad865f97356c1f78590b025bdf2b48edfb582cb6c2c",
+    "1196.jpg": "e65c694f55bea6b4dfa86f564570b3018dde5626f6d728e52f3893b36156d83e",
+    "1197.jpg": "6b26ad56d5990153d17dbc099785200bc31022144063a4c2955074461b773066",
+    "1198.jpg": "fc29f2e7b226197c6259c5402cdfea33d17174a62bf1b70aa87485bf98d8b598",
+    "1199.jpg": "af86bbb779bdab89fa1b5dc44f25970e7db1c99e6915fe0d10e93db0a9712a1b",
+    "1200.jpg": "32f09180a0c439bea72d5566cebfcb12575e5ffa1c761cf85527e7d66e0e4b5b",
+    "1201.jpg": "e381ee3741b5b8c3e7c98aefa422ac277b58289f07f37bf7fa3dfb229f99f18b",
+    "1202.jpg": "b281a261bf876f4e6b41623dbaef79b3be4cd6ea3c165080f92599d2675d301f",
+    "1203.jpg": "b3d2aa66539eef0a1a5a6ea6580deb9ab4164c6817d405889ec1f57a2254363b",
+    "1204.jpg": "cd4ac61c1c20ea21909edb17d38adb88de0b8889330769ebbda1c05cee4c8233",
+    "1205.jpg": "49f5dd0b51d7c84ed176daea0e8eb5fb81218b3c3a51448c7fb749055f9ff609",
+    "1206.jpg": "2686729fd503f243c36aa31de96f6b52d7d3cbec96df8bd6b5ea9d612982e5c2",
+    "1207.jpg": "bfd2c011aafcabcdb668230c1c4c37b0aadc61f941ee7041a9eb539dfcc8886e",
+    "1208.jpg": "16a21e405ca9c087abca9b1b5681445f6d65d10673dfa1d32a6a2697863761ee",
+    "1209.jpg": "a475c39cb278f6965b22bacc5e725e7f38b44378bdfb4c7ced82088416f79244",
+    "1210.jpg": "a6d425e6a3da5b6fc29bf58e0b2e281a1ed9cd594eb0bc706982d05296731c4c",
+    "1211.jpg": "6ab5820abff50a29cb977b1d3a9f45087bc8a1d44ae7973256ff3118b4a2b78b",
+    "1212.jpg": "376fb116947d02874e56edcb9f648822a210d6c0a96da56638b2690b7f6af093",
+    "1213.jpg": "da18bd7ce45d401889d7b89c5933d6ed2c6e47f5ac3d51a5e3f33cc637659241",
+    "1214.jpg": "233fd0accfa16e3bbe88a7654d27f42f18342d529121fe8edf511e08defbbd41",
+    "1215.jpg": "7a7168d5b9908544c2f850584aa07eaf65cc60a6d1ac8d684a4b94ef10f290b6",
+    "1216.jpg": "d3784faf07bc0ad6bfb37cce3fd5be89621cffff1f6724f975eff3abb2e0f2a4",
+    "1217.jpg": "90188273318486e43668e4682368143fa9c3bd5407f194db5859efbd58ca0203",
+    "1218.jpg": "c2fafe4befb05e50241b47339110f392872c2f20bdb743b17102fd84cd6009c3",
+    "1219.jpg": "b6ec0a761fdcf9767bcc6bd94df22a637a192ba473abe05d0addd17268863190",
+    "1220.jpg": "0c78f9a9de8ffd282334a59b7fa1587b4ff41975e9f849e9d747bf784eb7101b",
+    "1221.jpg": "48c1af07bf817b655d11d746deda76d7e263329d3d71423925c22584845ad878",
+    "1222.jpg": "7f01b138e34210ec49ec44e6e71b3c7f719a6c6046e5acb1751b1fba94473b48",
+    "1223.jpg": "8fa8c5a7888a1fa5c423ead2ce63ad242fc4c6eb6b787817763f846119319905",
+    "1224.jpg": "c945036642f1ebbfad8cdbcf305b69376b38d1cff7fe77e1c1180705f510ae3a",
+    "1225.jpg": "c58ab7c6c9e4dd05b2a1098087559b0889d5194ccc909cb66baecea6f242da68",
+    "1226.jpg": "09b3859e584d450150b852b71951358c9b2299412b4e1ffd96c4d47c2cf97693",
+    "1227.jpg": "e9a1dfd63bd1017b1c0ddc81e7ecf5aeaf22e9a19b134ac1c79606e451aa2af8",
+    "1228.jpg": "fde9595c103d7e335553e447eb347612533d2cd3c4455b7b4cae2783a69fe018",
+    "1229.jpg": "c4848cb8d55b1584fc2efaf786b99a0283b6e623ab2c13b54d833a7036843432",
+    "1230.jpg": "78b7cee0c157316eb93544a75fc30aa3cde068ad0b59f02230e1ade09efb5fe8",
+    "1231.jpg": "31869906acac040dda77751d42b6defe046277c98a68e030581b00ff1013eb15",
+    "1232.jpg": "43c8f55c5ad109df4256545be9954f30b78199725c9892d83310dc5e2e16a2f0",
+    "1233.jpg": "60d184556fa6457426e7ca626fa6b5ece2ba3336df265e7d0ff9712631bcfaa5",
+    "1234.jpg": "fe9717e5642bd23ed71d16373e2a86930728f061c802ed50c998cb9340c39cba",
+    "1235.jpg": "f8af37784f96f5ec78f1fc138d4f9d78b17af230b575e1e4ff2cbd73b42ae8fe",
+    "1236.jpg": "0571d5f28132d7add6cd4a33d8d79354373703ad84130ebdb0d7725150f7b909",
+    "1237.jpg": "957636dba838731f7f9aa61b02da120e53f0efe8a4c75054a3d56485426539db",
+    "1238.jpg": "03428b00ae06e1fb330165f3fea3c6bd1a9806b2ae6f9dc47181c3c49546515f",
+    "1239.jpg": "b444b473ed0890f0c8c6f84e88804e8380f2a8aff38e3a733ae21ed1644ad7dd",
+    "1240.jpg": "574a78821efa90854adbeb0c44c2bb08da6f165df17ad20cbf6dee59b24e1f88",
+    "1241.jpg": "ab56804ebd37b807d8e96294dc399c2455fa1f596968bb6ca27d85a4fce9f062",
+    "1242.jpg": "ab7084bd4028e9351cb5df8c7cd22d462ab065a848db20f5d17fba50b21b8738",
+    "1243.jpg": "4cb8236d0c803a4dd351be084013ed4c89d4937cd13831f1fc833a6aaf85ff02",
+    "1244.jpg": "ecedd7a50647385ca4f70f37b4daf6b5f5759b7a2e7f5c566db94de4a67a0fa7",
+    "1245.jpg": "f5b0c4b0487abe18b57e4b3f918619ae3e69029e0bf048f2814fdbd53445a99a",
+    "1246.jpg": "c66e5c0a33635e6f65348c427f5bc0d56b10429995840fd9b79500b2dcddc942",
+    "1247.jpg": "56f98ed25e37c7e60dfcd10b902b244ea30c8eb9b43f3d7804c2f8893f4df4a7",
+    "1248.jpg": "6a18938aec82a3d918f562f3bafdc290a579de612b74a2d49b544603e93b12b0",
+    "1249.jpg": "1679cf4112491075c5645f6021e2fa7abd8c90286f1e8cd6228c14bc883a55ba",
+    "1250.jpg": "7d148564ea4667211d388bba0422c5a620cece7cb1f79154c76de7f25a2d1a18",
+    "1251.jpg": "95cac4fce5f677fbbf6b0e1e47c907c88c0b1f87c3668332b6f5dfd9395b9267",
+    "1252.jpg": "814d0521a848222e101b61825696c7e9805379d6e031292355471070c63e2772",
+    "1253.jpg": "927eedc82f344978e3a8a2510756547b9b2f3f3ec6e333bb56dc824cb8452785",
+    "1254.jpg": "8ade4b6fcd9406d510fbe246c824c9b9d9705ab9819c2b833ccf9d51b54973e1",
+    "1255.jpg": "72f4df26baceb7c99acd073e1453bdd8416fdfda6c14d49614fe43ebf6d5a374",
+    "1256.jpg": "0dc400058e7d53819866276a1fc51f87c9f0997c44d64ae8feeb13732b855ded",
+    "1257.jpg": "85f8b114fc8cc21f340c41bbfbe13902c60a1324e686a4f5719eb7020b5c161c",
+    "1258.jpg": "7a69c0ae0be4cf6215ce6e664d025f081e513e57f73c5edfc9fd81be08c60e53",
+    "1259.jpg": "6b060c2158b4c4764f576245c69f4302ef37d299a987eca3272123698af64bc6",
+    "1260.jpg": "613c5cb9434a16ed9ecaf14d373474f42c8566fc6cac1a618da48bd7b8fe61f2",
+    "1261.jpg": "cff017e2bdc6979fb2234663cbacbf93a45eca106c83c96a465339e8b0ba2e66",
+    "1262.jpg": "467fc06f5746d99d967c791c212fde97b0498f090f0167373eb76b73e40b8840",
+    "1263.jpg": "ed801943692c20c0ff94bfaaa92e1b40b94688e0d2f45d7d2a631fa6cde79b90",
+    "1264.jpg": "1f35d86de607b571eec3ecff70ca3bdc401a4ff43e3b9b383e2d35405990de9d",
+    "1265.jpg": "0e861aadf1a6a441ea461b76b7c8350a9ec5945e2b511a2368ed2f458aec9704",
+    "1266.jpg": "18dde06b3d89fce9d1f8b9884af04a86ad8246a74b334b71756d1ebe35a9f19b",
+    "1267.jpg": "ef91a9e2a5ddade5bbf796858c9bb4f0dc96fca7777fc494867159d1fdf2e0e3",
+    "1268.jpg": "47b2e5250246e67a6ccb794123f16b207efd76a08123415118d5ae5d8375ecc3",
+    "1269.jpg": "e1253966818ab94a5b6b065571793695625ec27f56b92ebf4e5c627ae1a10746",
+    "1270.jpg": "b2f26636f90a80f0b97befba7af3af38ebd937dd591ac1fe4a8644be3b8ee18d",
+    "1271.jpg": "26f4357b8def20de06ca2da7b89b187608508bcfd56563decf78f1f9436c2863",
+    "1272.jpg": "1d250aad19bd46351559a962daa90db740dbdeefafba2f789cbaee22e033af8d",
+    "1273.jpg": "303a75ae4a80569cff227cb8b41d8bfe6316efe7ecf27fa8e011953a20045616",
+    "1274.jpg": "689ec3fe3eb6ad593be4ede72369a71adb3e9246907cfe1324bbed9957cb77a6",
+    "1275.jpg": "71e5b5d31147ba13589bb1bbfe7e7aca9173a0d96baf5ed930137af08d715cb6",
+    "1276.jpg": "58e3605f47808543420558aca7b6564cf3d91e8966ea480ec2576c930418ebea",
+    "1277.jpg": "186c7e735b535f8b705be2917f7e0a9e33f936db2a6518257f570143eb8bdf12",
+    "1278.jpg": "e8f4d7f240c0a76b6b9358be305b92f6be7af3ce3ad7f4402e53aa1973943a2e",
+    "1279.jpg": "4c137c775c5bf2fa82c6bd58bd89077f704d0d83ee1d13954cbfaa25e2ef9835",
+    "1280.jpg": "94ddad7f1436100ed0f81d73c2f209d3029732ece468ebffbd0cad9f4e0e587b",
+    "1281.jpg": "2fcadb81633032cb38592e843a498ce5e322a29c820e1dcb9282d989a6e81f1e",
+    "1282.jpg": "c0fd8e0c95fe24b3caefe0639e22fdd1c8880fd63ecb2eaf4606c7209e235d71",
+    "1283.jpg": "72e07a341d761d7b5df6c33e3aaf27ada797ebe293598fee25f66b7faa21d025"
+  }
+}

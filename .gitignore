@@ -1,0 +1,21 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.idea/
+.ruff_cache/
+
+# Данные и результаты запусков; artifacts/ сохраняется для сдачи.
+data/
+runs/
+runs_hw2/
+yellow-sticky-traps-dataset*/
+yellow-sticky-traps-dataset*.zip
+
+# Скачанные веса моделей.
+/yolo*.pt
+/rtdetr*.pt
+
+# Локальные эксперименты, не относящиеся к ДЗ2.
+/dynamic_budgeted_scale_145m.ipynb
+/dynamic_scale_145m_results.json
+/tinystories_*.json
