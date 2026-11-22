@@ -1,0 +1,11 @@
+# ДЗ2, вариант CV (детекция на YOLO).
+# Устанавливать в окружение notebook; имеющуюся CUDA-сборку torch сохраняем.
+ultralytics==8.4.40
+torch>=2.2
+torchvision>=0.17
+numpy>=1.24
+scipy>=1.10
+matplotlib>=3.7
+pillow>=10.0
+pyyaml>=6.0
+# Бонус 6.4 использует CUDA FP16 и не требует ONNX.
